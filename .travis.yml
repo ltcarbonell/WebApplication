@@ -1,0 +1,16 @@
+language: python
+python:
+- '3.6'
+install:
+- pip install -r requirements/dev.txt
+- pip install codecov
+before_script:
+  - export FLASK_APP="./backend/src/main.py"
+script:
+- coverage erase
+- pytest --cov=backend backend/tests
+after_success:
+- codecov
+deploy:
+  api_key:
+    secure: Cq/6BHbc+OWM7xwtxGu1qzjyuVoKQC3Uli00qISKgE9fWX+Rdc+fzmTSRx/5ucBPsc9U8X9RsxPcEmofPDs0f7820HyWgAnN6QuhzbrEZu4Ib/kfBENv2jLrQHrMGppYLS1PN3ZMuMKaCnuXvuOmQVZu/umzphakrOOoZT0vTMpJuZGoLPoBSroWUh3DT9v4jWB5vGl3r0ZSUSNK+qxZDX7V5JnL8HJy/UlvEPRmQSN98tL9m5r+QcVsN95Jyduyd4vAfrSnnyg6TU31kUwRGagadDZZDpCoMRilLR7Cxz4+5PqPm4W9DP5eGHrEIvOCr84m6/YzBZpHTR0Xd7MpL/lRDK9wVpW91aJTyo2B3vhn9TMOS4PUFIwl/PJJqPY7QBIR1/30O7JQPSSV+pBRYleWurte/OSJxd1NE01WOCKekiXwaNb5X1I3Jg72obGVG5zMCMVqaWcai+dpuaw84i3b6e1fi8Od641YYiitpNhbQjJ8+MEOrTHdOl0HOZ+hZpJ+AVVEd40mo9by1n/7NqRGBw8JBWx7DH2IqLz5KrGCyAfTCUvnz27pR42TxMuzlO+GtbjiQSAUln0FzP4drS/ctsqQSaWYbFz6y5mEwer6TW4rGw4r+8NFLuQi5xB+oCBVCSzVmAG0nK67Omf+188mepAnuBVDT8z/PoY3/Pw=

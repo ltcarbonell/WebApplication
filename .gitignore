@@ -45,6 +45,7 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
+.pytest_cache
 
 # Translations
 *.mo
@@ -103,3 +104,6 @@ ENV/
 .idea/
 *.iml
 .DS_Store
+
+# Angular
+node_modules/

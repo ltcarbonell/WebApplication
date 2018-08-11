@@ -1,0 +1,16 @@
+# requirements/prod.txt
+
+# Everything needed in production
+# Flask
+flask==1.0.2
+pymongo==3.6.1
+marshmallow==2.15.4
+flask-cors==3.0.6
+
+# Deployment
+gunicorn==19.7.1
+
+# Test
+pytest==3.6.0
+# behave==1.2.5
+# WebTest==2.0.29
