@@ -33,7 +33,10 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-package-lock.json
+
+# Don't check in secret files
+*secret.js
+.env
 
 # System Files
 .DS_Store
